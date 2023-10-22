@@ -2,7 +2,7 @@
  * Best First Search algorithm implementation by utilizing min-heap priority queue (sorted by cost)
  * which finds the shortest path to reach target element provided by user in the form of cost (Node(state,cost))
  * and prints each node visited with the accumulated path cost while heap up process (target element -> root)
- * Author: Selin Deniz
+ * O(k log n + k) 
  */
 
 //Linking other header files
