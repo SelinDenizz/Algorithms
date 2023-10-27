@@ -1,5 +1,5 @@
 /* Template bubble sort class that provides special methods
- * to sort a templated data structure (array, vector, linked list, doubly linked list - in descending order)
+ * to sort a templated data structure (array, vector, linked list, doubly linked list)
  * by utilizing bubble sort algorithm adnd print sorted data structure
  */
 
