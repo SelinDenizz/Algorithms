@@ -1,6 +1,6 @@
 /* Template bubble sort class that provides special methods
  * to sort a templated data structure (array, vector, linked list, doubly linked list)
- * by utilizing bubble sort algorithm adnd print sorted data structure
+ * by utilizing bubble sort algorithm and print sorted data structure
  */
 
 //Linking other header files
