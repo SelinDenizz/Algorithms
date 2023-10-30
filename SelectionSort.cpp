@@ -1,13 +1,12 @@
 /* Template selection sort class that provides special methods
  * to sort a templated data structure (array, vector, doubly linked list)
  * by utilizing selection sort algorithm and print sorted data structure
- * O(n^2)
+ * Time complexity: O(n^2)
  */
 
 //Linking other header files
 #include <iostream>
 #include <vector>
-#include <algorithm>
 #include <type_traits>
 #include <stdexcept>
 
