@@ -11,7 +11,7 @@
 #include <type_traits>
 #include <stdexcept>
 
-//Class declaration for BubbleSort
+//Class declaration for Selection Sort
 template <typename T>
 class SelectionSort {
 
