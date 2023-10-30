@@ -1,5 +1,5 @@
 /* Template selection sort class that provides special methods
- * to sort a templated data structure (array, vector, doubly linked list)
+ * to sort a templated data structure (array, vector)
  * by utilizing selection sort algorithm and print sorted data structure
  * Time complexity: O(n^2)
  */
@@ -90,16 +90,16 @@ class SelectionSort {
         void selectionSortArrAndVecImp() {
 
             //Initializing a variable to hold min element in the unordered part that will be swapped later
-            int minElIdx = 0;
+            size_t minElIdx = 0;
 
             //Traversing through list by starting to compare first element of the array/vector
-            for(int elToSwapIdx = 0; elToSwapIdx < size_ - 1 ; elToSwapIdx++) {
+            for(size_t elToSwapIdx = 0; elToSwapIdx < size_ - 1 ; elToSwapIdx++) {
 
                 //Initializing minimum element index in the unordered part as element that will be swapped
                 minElIdx = elToSwapIdx;
 
                 //Traversing through unsorted (remaining after latest elToSwapIndx element) part to find min element
-                for(int otherElIdx = elToSwapIdx + 1; otherElIdx < size_ ; otherElIdx++ ) {
+                for(size_t otherElIdx = elToSwapIdx + 1; otherElIdx < size_ ; otherElIdx++ ) {
                     
                     //Comparing elements after element that will be swapped
                     if(data_[otherElIdx] < data_[minElIdx]) {
@@ -122,13 +122,13 @@ class SelectionSort {
         void minMaxSelectionSortArrAndVecImp() {
 
             //Initializing a variable to hold min element in the unordered part that will be swapped later
-            int minElIdx = 0;
+            size_t minElIdx = 0;
 
             //Initializing a variable to hold max element in the unordered part that will be swapped later
-            int maxElIdx = 0;
+            size_t maxElIdx = 0;
 
             //Traversing through list by starting to compare first element and last of the array/vector
-            for(int frontElToSwapIdx = 0, backElToSwapIdx = size_ - 1; frontElToSwapIdx < backElToSwapIdx ; frontElToSwapIdx++, backElToSwapIdx--) {
+            for(size_t frontElToSwapIdx = 0, backElToSwapIdx = size_ - 1; frontElToSwapIdx < backElToSwapIdx ; frontElToSwapIdx++, backElToSwapIdx--) {
 
                 //Initializing minimum element index in the unordered part as element that will be swapped
                 minElIdx = frontElToSwapIdx;
@@ -137,7 +137,7 @@ class SelectionSort {
                 maxElIdx = frontElToSwapIdx;
 
                 //Traversing through unsorted (middle part between front and back indices) part to find min and max element
-                for(int otherElIdx = frontElToSwapIdx; otherElIdx <= backElToSwapIdx; otherElIdx++) {
+                for(size_t otherElIdx = frontElToSwapIdx; otherElIdx <= backElToSwapIdx; otherElIdx++) {
                     
                     //In the case of finding an element greater than compared element
                     if(data_[otherElIdx] > data_[maxElIdx]) {
