@@ -1,6 +1,6 @@
 /* Template bubble sort class that provides special methods
  * to sort a templated data structure (array, vector, linked list, doubly linked list)
- * by utilizing bubble sort algorithm and print sorted data structure
+ * by utilizing bubble sort algorithm adnd print sorted data structure
  * Time complexity: O(n^2)
  */
 
@@ -98,16 +98,16 @@ class BubbleSort {
             bool anySwap;
 
             //Traversing through data structure 
-            for(int rep = size_; rep > 0; rep-- ) {
+            for(size_t rep = size_; rep > 0; rep-- ) {
 
                 //Setting tracking variable for earlier termination in the case of no swap remaining part of the data structure
                 anySwap = false;
 
                 //Iteratively comparing sequenced elements
-                for(int firstEl = 0; firstEl <= size_ - 2; firstEl++) {
+                for(size_t firstEl = 0; firstEl <= size_ - 2; firstEl++) {
 
                     //Variable to track next element to be compared with first element
-                    int nextEl = firstEl + 1;
+                    size_t nextEl = firstEl + 1;
 
                     //Comparing first and next element
                     if(data_[firstEl] > data_[nextEl]) {
