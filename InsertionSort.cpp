@@ -1,6 +1,6 @@
 /* Template insertion sort class that provides special methods
  * to sort a templated data structure (array, vector)
- * by utilizing bubble sort algorithm adnd print sorted data structure
+ * by utilizing insertion sort algorithm and print sorted data structure
  * Time complexity: O(n^2)
  */
 
