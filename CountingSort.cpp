@@ -148,7 +148,7 @@ class CountingSort {
                 cumSumOfEl = count[elToPlace];
 
                 //Initializing the final list index where element will be placed
-                idxElToPlace = cumSumOfEl--;
+                idxElToPlace = cumSumOfEl - 1;
 
                 //Placing the element
                 final[idxElToPlace] = elToPlace;
