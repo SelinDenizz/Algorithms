@@ -1,5 +1,5 @@
 /* Solution for reversed bits problem in Leetcode,
- * which reverses provided 32-bit unsigned integers by bit manipulation
+ * which reverses provided 32-bit unsigned integers by bit manipulation and single pass approach
  * Time - complexity & Space - complexity: O(1)
  */
 
