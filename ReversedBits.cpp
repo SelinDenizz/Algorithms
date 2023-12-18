@@ -1,5 +1,6 @@
-/* 
- * Reversing provided 32-bit unsigned integer
+/* Solution for reversed bits problem in Leetcode,
+ * which reverses provided 32-bit unsigned integers by bit manipulation
+ * Time - complexity & Space - complexity: O(1)
  */
 
 #include<iostream>
