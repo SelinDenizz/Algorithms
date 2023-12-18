@@ -1,6 +1,6 @@
 /* 
  * Reversing provided 32-bit unsigned integer
-*/
+ */
 
 #include<iostream>
 
