@@ -1,6 +1,6 @@
 /* Solution for Valid Parantheses problem in Leetcode
  * which determines whether provided string includes
- * same type open-close parantheses forms recursively.
+ * same type open-close parantheses forms.
  * Runtime - complexity: O(n)
  * Space - compexity: O(n)
  */
@@ -13,100 +13,50 @@ class Solution {
     //Public methods
     public:
 
-        //Balanced brackets checking wrapper method
+        //Balanced and matched brackets checking  method
         bool isValid(const std :: string& str) {
 
-            //Initializing a variable which indicates first character (start point)
-            size_t startIdx = 0; 
+            //Initializing variable to track open paranthesis
+            std :: string openPs = "";
+            
+            //Iterating through each character of the string
+            for (char ch : str) {
 
-            //Initializing a variable which indicates length of the string
-            size_t size = str.length();
+                //In the case of extracted character is an open bracket
+                if (ch == '(' || ch == '{' || ch == '[') {
 
-            //Calling the helper method
-            return isValidHelper(str, size, startIdx);
+                    //Updating open parantheses list
+                    openPs.push_back(ch);
+                } 
+                
+                //Otherwise
+                else {
+
+                    //In the case of number of open brackets become 0 or case of unmatching brackets
+                    if (openPs.empty() || !isMatchingPair(ch, openPs.back())) {
+
+                        //Termination
+                        return false;
+                    }
+
+                    //Removing the last open parantheses since a closed parantheses obtained
+                    openPs.pop_back();
+                }
+            }
+
+            //In the case of balanced string
+            return openPs.empty();
         }
     
     //Private methods
     private:
 
-        //Balanced brackets checking method
-        bool isValidHelper(const std :: string& str, size_t& size, size_t& idx) {
+        //Matching controlling method for the forms (),[],{}
+        bool isMatchingPair(const char& close, const char& open) {
 
-            //In the case of reaching string's end
-            if (idx == size) {
-
-                //Return statement
-                return true;
-            }
-
-            //In the case of obtained open bracket is (
-            if (str[idx] == '(') {
-                
-                //In the case of next closing parantheses does not match
-                if(str[idx + 1] != ')') {
-
-                    //Termination
-                    return false;
-                }
-
-                //In the case of next closing parantheses matches
-                else {
-
-                    //Updating index variable
-                    idx += 2;
-
-                    //Recursive call to control next two contigous characters b
-                    return isValidHelper(str, size, idx);
-                }
-            }
-
-            //In the case of obtained open bracket is {
-            else if(str[idx] == '{') {
-                
-                //In the case of next closing parantheses does not match
-                if(str[idx + 1] != '}') {
-
-                    //Termination
-                    return false;
-                }
-
-                //In the case of next closing parantheses matches
-                else {
-
-                    //Updating index variable
-                    idx += 2;
-
-                    //Recursive call to control next two contigous characters b
-                    return isValidHelper(str, size, idx);
-                }
-            }
-            
-            //In the case of obtained open bracket is [
-            else if(str[idx] == '[') {
-                
-                //In the case of next closing parantheses does not match
-                if(str[idx + 1] != ']') {
-
-                    //Termination
-                    return false;
-                }
-
-                //In the case of next closing parantheses matches
-                else {
-
-                    //Updating index variable
-                    idx += 2;
-
-                    //Recursive call to control next two contigous characters b
-                    return isValidHelper(str, size, idx);
-                }
-            }
-            
-            //In the case of invalid character
-            else {
-
-                //Termination
-                return false;
-            }
+            //Determining whether the last open parenthesis matches the current closing parenthesis
+            return (close == ')' && open == '(') ||
+                   (close == '}' && open == '{') ||
+                   (close == ']' && open == '[');
         }
 };
