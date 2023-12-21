@@ -29,7 +29,7 @@ class Solution {
             int minEl = nums[0];
             int maxDif = 0;
 
-            //Iterating through vector by sliding window technique
+            //Iterating through vector    
             for(int rep = 0; rep < size; rep++) {
 
                 //Updating maximum difference 
