@@ -117,6 +117,33 @@ class MyCircularQueue {
             other.size = 0;
             other.capacity = 0;
         }
+    
+        //Move assignment operator overload
+        MyCircularDeque& operator=(MyCircularDeque&& other) noexcept {
+
+            if (this != &other) {
+
+                //Releasing current resources
+                delete[] elements;
+
+                //Transferring ownership
+                elements = other.elements;
+                front = other.front;
+                rear = other.rear;
+                size = other.size;
+                capacity = other.capacity;
+
+                //Resetting the source object
+                other.elements = nullptr;
+                other.front = -1;
+                other.rear = -1;
+                other.size = 0;
+                other.capacity = 0;
+            }
+
+            //Returning a reference to the this object
+            return *this;
+        }
 
         //Method to determine whether the circular queue is empty
         bool isEmpty() {
