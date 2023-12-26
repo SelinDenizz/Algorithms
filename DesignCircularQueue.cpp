@@ -80,7 +80,7 @@ class MyCircularQueue {
         MyCircularQueue& operator=(const MyCircularQueue& other) {
 
             //Checking self-assignment
-            if (this != &other) { 
+            if(this != &other) { 
 
                 //Deallocating existing memory
                 delete[] elements;  
@@ -121,7 +121,7 @@ class MyCircularQueue {
         //Move assignment operator overload
         MyCircularDeque& operator=(MyCircularDeque&& other) noexcept {
 
-            if (this != &other) {
+            if(this != &other) {
 
                 //Releasing current resources
                 delete[] elements;
@@ -193,14 +193,14 @@ class MyCircularQueue {
         bool deQueue() {
             
             //In the case of the queue is empty
-            if (isEmpty()) {
+            if(isEmpty()) {
 
                 //Dequeue operation is not possible
                 return false;
             }
 
             //In the case of only one element is in the queue
-            if (front == rear) {
+            if(front == rear) {
 
                 //Resetting front and rear indices
                 front = -1;  
@@ -225,7 +225,7 @@ class MyCircularQueue {
         int Front() {
             
             //In the case of the queue is empty
-            if (isEmpty()) {
+            if(isEmpty()) {
 
                 //Return
                 return -1;  
@@ -239,7 +239,7 @@ class MyCircularQueue {
         int Rear() {
             
             //In the case of the queue is empty
-            if (isEmpty()) {
+            if(isEmpty()) {
 
                 //Return
                 return -1;  
