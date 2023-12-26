@@ -32,9 +32,9 @@ class Solution {
         void permuteHelper(std :: vector<int>& nums, int start, std :: vector<std :: vector<int>>& generatedPerms) {
 
             //In the case of exhaustion of array
-            if (start == nums.size()) {
+            if(start == nums.size()) {
 
-                //Updating permutation list wih generated permutations
+                //Updating permutation list with generated permutations
                 generatedPerms.push_back(nums);
 
                 //Termination
@@ -42,7 +42,7 @@ class Solution {
             }
 
             //Traversing the array starting from the current index
-            for (int rep = start; rep < nums.size(); rep++) {
+            for(int rep = start; rep < nums.size(); rep++) {
 
                 //Swapping 'start' and 'rep' indexed elements
                 std :: swap(nums[start], nums[rep]);
