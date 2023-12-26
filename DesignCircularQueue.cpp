@@ -102,6 +102,22 @@ class MyCircularQueue {
             return *this;  
         }
 
+        //Move constructor
+        MyCircularDeque(MyCircularDeque&& other) noexcept
+            : elements(other.elements), 
+            front(other.front), 
+            rear(other.rear), 
+            size(other.size), 
+            capacity(other.capacity) {
+                
+            //Resetting the source object
+            other.elements = nullptr;
+            other.front = -1;
+            other.rear = -1;
+            other.size = 0;
+            other.capacity = 0;
+        }
+
         //Method to determine whether the circular queue is empty
         bool isEmpty() {
 
