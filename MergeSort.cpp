@@ -163,7 +163,7 @@ class MergeSort {
             }
         
             //In the case of any remaining element in the rightSub
-            while (idxLeftSub < sizeLeftSub) {
+            while (idxRightSub < sizeRightSub) {
 
                 //Copying its elements to the merged array
                 data_[idxMerged] = leftSub[idxRightSub];
